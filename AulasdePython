@@ -1,0 +1,25 @@
+'''
+Faça um programa que receba uma data em um único inteiro no formatao DDMMAAAA e mostre esta data por extenso.
+Exemplo:
+- ENTRADA: 28072001
+-SAIDA: Campina Grande-PB, 28 de julho de 2001
+
+
+'''
+
+
+def data_por_extenso(data_int):
+    dia = data_int // 1000000
+    mes = (data_int // 10000) % 100
+    ano = data_int % 10000
+    meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+    return f"{dia} de {meses[mes - 1]} de {ano}"
+
+# Solicita a data ao usuário
+data_str = input("Digite a data no formato DDMMAAAA: ")
+
+# Converte a data para inteiro
+data_int = int(data_str)
+
+# Exibe a cidade, estado e a data por extenso
+print("Campina Grande - PB",data_por_extenso(data_int),)
